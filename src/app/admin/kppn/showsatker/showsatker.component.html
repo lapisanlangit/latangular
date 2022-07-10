@@ -1,0 +1,38 @@
+    
+<div class="modal fade" id="ctnShowSatker" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">List Satker</h5>
+        
+        </div>
+        <ajax-loading [ajax]="ajax2"></ajax-loading>
+
+        <div class="modal-body"  *ngIf="ajax2==false">
+          <div class="table-responsive">
+            <table  class="table table-bordered" id="dataTable" class="table table-bordered table-striped table-hover" datatable [dtOptions]="dtOptions">
+
+                <thead>
+                    <tr>
+                        <th>KODE</th>
+                        <th>NAMA</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of listSatker">
+                      <td>{{ item.kdsatker }}</td>
+                      <td>{{ item.nmsatker }}</td>
+                    </tr>
+                  </tbody>
+              </table>
+   
+  </div>
+
+        <div class="modal-footer">
+          
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
